@@ -2,6 +2,7 @@
 
 import random
 
+
 def guessing_game() -> None:
     correct_number = random.randint(1, 10)
 
@@ -24,5 +25,6 @@ def guessing_game() -> None:
             break
         else:
             print("Wrong! Try again.")
+
 
 guessing_game()

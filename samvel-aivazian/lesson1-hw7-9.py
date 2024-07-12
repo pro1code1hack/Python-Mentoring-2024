@@ -3,10 +3,12 @@ def convert_inches_to_centimeters(inches: int) -> str:
     centimeters = inches * 2.54
     return f"{centimeters} cm"
 
+
 # Task 2: Temperature Converter
 def convert_fahrenheit_to_celsius(fahrenheit: int) -> str:
     celsius = (fahrenheit - 32) * 5 / 9
     return f"{celsius:.1f} Celsius"
+
 
 # Task 3: Simple Interest Calculator
 def calculate_simple_interest(principal: int, rate: int, time: int) -> str:

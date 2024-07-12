@@ -6,6 +6,7 @@ def find_palindromes(word_list: list[str]) -> list[str]:
             palindromes.append(word)
     return palindromes
 
+
 # Example usage
 word_list = ["radar", "python", "level", "world", "madam"]
 palindrome_words = find_palindromes(word_list)

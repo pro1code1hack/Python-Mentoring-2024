@@ -1,7 +1,9 @@
 import re
+from typing import Dict, List
+
 
 # Task 7: Mini Database
-def mini_database() -> dict[str]:
+def mini_database() -> dict[str, list[str] | str]:
     name = input("Enter your name: ")
     age = input("Enter your age: ")
     hobbies = input("Enter your hobbies (separated by commas): ").split(', ')
@@ -14,16 +16,18 @@ def mini_database() -> dict[str]:
     }
     return person_info
 
+
 # Task 8: Validating IP Addresses
 def validate_ip(ip_str: str) -> bool:
     # Regular expression to match valid IP addresses
     ip_pattern = re.compile(r'^(\d{1,3}\.){3}\d{1,3}$')
-    
+
     # Validate the IP address
     if ip_pattern.match(ip_str):
         parts = map(int, ip_str.split('.'))
         return all(0 <= part <= 254 for part in parts)
     return False
+
 
 # Task 9: Email Extractor
 def extract_emails(text: str) -> str:

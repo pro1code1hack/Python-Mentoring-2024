@@ -1,4 +1,7 @@
 # Task 1: Tuple Analyzer
+from typing import Tuple, List
+
+
 def tuple_analyzer(input_numbers: str) -> tuple:
     numbers_tuple = tuple(map(int, input_numbers.split(',')))
     sum_numbers = sum(numbers_tuple)
@@ -7,19 +10,22 @@ def tuple_analyzer(input_numbers: str) -> tuple:
     minimum = min(numbers_tuple)
     return numbers_tuple, sum_numbers, average, maximum, minimum
 
+
 # Task 2: Tuple Sorter
-def tuple_sorter(input_elements: str, order: str) -> tuple[str]:
+def tuple_sorter(input_elements: str, order: str) -> tuple[int, ...]:
     elements = tuple(map(int, input_elements.split(',')))
     sorted_elements = tuple(sorted(elements, reverse=(order == 'desc')))
     return sorted_elements
+
 
 # Task 3: Tuple Element Finder
 def tuple_element_finder(input_tuple: tuple[int], element_to_search: int) -> int:
     index = input_tuple.index(element_to_search) if element_to_search in input_tuple else -1
     return index
 
+
 # Task 4: Enumerate Sports Teams
-def enumerate_sports_teams(input_teams: str) -> list[enumerate[str]]:
+def enumerate_sports_teams(input_teams: str) -> list[tuple[int, str]]:
     teams_list = input_teams.split(',')
     ranked_teams = enumerate(teams_list, start=1)
     return list(ranked_teams)

@@ -1,12 +1,15 @@
 # Task 4: Average of Evens
-def average_of_evens() -> list[int]:
+
+
+def average_of_evens() -> tuple[list[int], float]:
     # Assuming the input range to be from 1 to 10 for demonstration purposes
     evens = [num for num in range(1, 11) if num % 2 == 0]
     average = sum(evens) / len(evens)
     return evens, average
 
+
 # Task 5: List of numbers operations
-def list_operations() -> dict[str]:
+def list_operations() -> dict[str, float | int | tuple | str | list[int]]:
     numbers = (3, 12, 5, 8, 4, 9, 15, 22, 10)
     operations_output = {
         "length": len(numbers),
@@ -21,6 +24,7 @@ def list_operations() -> dict[str]:
         "replace_10_with_20": [20 if num == 10 else num for num in numbers]
     }
     return operations_output
+
 
 # Task 6: ASCII alphabet
 def ascii_alphabet() -> list[str]:

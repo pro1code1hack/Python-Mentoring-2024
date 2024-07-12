@@ -6,4 +6,5 @@ def nested_loops() -> None:
             print(i, end="")
         print()
 
+
 nested_loops()

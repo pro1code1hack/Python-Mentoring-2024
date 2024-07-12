@@ -1,5 +1,4 @@
-
-# print('We are learning Python!')  
+# print('We are learning Python!')
 # print(type('We are learning Python!'))      # <class 'str'>
 
 # if --> 
@@ -15,10 +14,9 @@
 
 # assigment (=) 
 
-string1 = 'We are learning Python!'         # Bad approach
-output_text = 'We are learning Python!'     # Bad approach
+string1 = 'We are learning Python!'  # Bad approach
+output_text = 'We are learning Python!'  # Bad approach
 greeting = 'We are learning Python!'
-
 
 # Docstring
 """
@@ -122,7 +120,6 @@ greeting = 'We are learning Python!'
 # print("Is it the weekend:", is_weekend)
 
 
-
 # 1. Offical python docs / Chatgp
 
 # dir() -> 
@@ -181,7 +178,6 @@ greeting = 'We are learning Python!'
 # print("Subtraction is = ", var_sub)
 
 
-
 ## Conditionals
 
 """
@@ -194,20 +190,16 @@ Operator	Description	Example	Result
 <=	Less than or equal to	5 <= 3	False
 """
 
-
 num1 = 11
 num2 = 22
 
-x = num1        # Makes a copy of num 11
-
+x = num1  # Makes a copy of num 11
 
 print(num1 == x)
 print(num1 is x)
 
-
 str1 = '11'
 str2 = 'abc'
-
 
 # `IS` -> checks the object in MEMORY SPACE (IT SHOULD MATCH THE SAME ADRESS)
 # `==` -> checks the equality of both objects 
@@ -261,7 +253,6 @@ str2 = 'abc'
 
 result = not True and (not 5 > 3 and 3 < 2 or 5 != 4) and (5 < 3)
 
-
 # result = not 5 > 3 and 3 < 2 or 5 != 4
 
 # Breakdown:
@@ -271,7 +262,6 @@ result = not True and (not 5 > 3 and 3 < 2 or 5 != 4) and (5 < 3)
 # Final result: False and False or True, which evaluates to True
 
 print(result)  # Output: True
-
 
 # F string
 
@@ -290,6 +280,7 @@ game_map = {
     5: [1, 2, 3, 4]  # Room 5 is connected to Rooms 1, 2, 3, and 4
 }
 
+
 def get_connected_rooms(room_id):
     """
     Get a list of rooms that can be entered from the given room.
@@ -303,17 +294,18 @@ def get_connected_rooms(room_id):
     else:
         return []  # Return an empty list if the room doesn't exist
 
+
 # Example Usage
 current_room = 5
 available_rooms = get_connected_rooms(current_room)
 print(f"From room {current_room}, you can enter rooms: {available_rooms}")
 
 graph = {
-    '1': {'2': 1}, # Комната 1 соединена с комнатой 2
-    '2': {'3': 1, '1': 1}, # Комната 2 соединена с комнатами 1 и 3
-    '3': {'4': 1, '2': 1}, # Комната 3 соединена с комнатами 2 и 4
-    '4': {'5': 1, '3': 1}, # Комната 4 соединена с комнатами 3 и 5
-    '5': {'1': 1, '4': 1, '2': 1, '3': 1} # Центральная комната 5 соединена со всеми другими
+    '1': {'2': 1},  # Комната 1 соединена с комнатой 2
+    '2': {'3': 1, '1': 1},  # Комната 2 соединена с комнатами 1 и 3
+    '3': {'4': 1, '2': 1},  # Комната 3 соединена с комнатами 2 и 4
+    '4': {'5': 1, '3': 1},  # Комната 4 соединена с комнатами 3 и 5
+    '5': {'1': 1, '4': 1, '2': 1, '3': 1}  # Центральная комната 5 соединена со всеми другими
 }
 
 # Вес каждого перехода по умолчанию равен 1

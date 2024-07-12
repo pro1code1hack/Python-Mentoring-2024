@@ -8,6 +8,7 @@ def draw_rectangle() -> None:
         else:
             print('*' + ' ' * (width - 2) + '*')
 
+
 # Task 2: Sum of Digits
 def print_digit_sum(number: int) -> None:
     # Convert the number to absolute value
@@ -18,10 +19,10 @@ def print_digit_sum(number: int) -> None:
     print(total_sum)
     # The function implicitly returns None
 
+
 # Call the functions for demonstration
 draw_rectangle()  # This will print the rectangle
 
 # Call the print_digit_sum function with example numbers
 print_digit_sum(1234)  # Expected Output: 10
 print_digit_sum(-567)  # Expected Output: 18
-

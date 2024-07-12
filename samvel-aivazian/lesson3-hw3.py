@@ -1,7 +1,7 @@
 # Task 3: Shopping List Organizer
 # A program that helps users organize their shopping list with add, view, remove, and sort functionalities.
 def shopping_list_organizer() -> None:
-    shopping_list = [] # Initial empty shopping list
+    shopping_list = []  # Initial empty shopping list
 
     def print_menu() -> None:
         print("\nMenu:")
@@ -13,7 +13,7 @@ def shopping_list_organizer() -> None:
     while True:
         print_menu()
         choice = input("Choose an action (add/view/remove/exit): ").lower()
-        
+
         if choice == "add":
             # Add an item
             item_to_add = input("Enter an item to add: ")
@@ -25,11 +25,11 @@ def shopping_list_organizer() -> None:
                 print(f"Item added. Your current list is: {shopping_list}")
             else:
                 print("Sorry, it is not a string")
-        
+
         elif choice == "view":
             # View the list
             print(f"Shopping List: {shopping_list}")
-        
+
         elif choice == "remove":
             # Remove an item
             item_to_remove = input("Enter an item to remove: ")
@@ -40,7 +40,7 @@ def shopping_list_organizer() -> None:
                 print(f"Item removed. Your current list is: {shopping_list}")
             else:
                 print("Item not found in the list.")
-        
+
         elif choice == "exit":
             # Exit the program
             print("Exiting the program.")

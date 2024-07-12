@@ -1,9 +1,10 @@
 # Assignment 1: Interval Membership
-def find_shortest_longest_cities(cities: list[str]) -> list[str]:
+def find_shortest_longest_cities(cities: list[str]) -> tuple[str, str]:
     # Sort the cities based on their length
     sorted_cities = sorted(cities, key=len)
     # The shortest city name will be the first and the longest will be the last
     return sorted_cities[0], sorted_cities[-1]
+
 
 # Assignment 2: Resting Query
 def contains_weekend_day(text: str) -> str:
@@ -12,6 +13,7 @@ def contains_weekend_day(text: str) -> str:
         return "YES"
     else:
         return "NO"
+
 
 # Assignment 3: Validating an Email Address
 def is_valid_email(email: str) -> str:

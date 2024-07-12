@@ -1,12 +1,13 @@
 from statistics import mean, median, multimode, StatisticsError
 
+
 # Task 5: Advanced Statistics Calculator
-def calculate_statistics(*data: int, **options: bool) -> dict:
+def calculate_statistics(*data: int, **options: bool) -> str | dict[str, int | str]:
     if not data:
         return "Dataset is empty"
-    
+
     statistics = {}
-    
+
     # If options are provided, calculate based on options
     if options:
         if options.get("mean", False):
@@ -24,7 +25,7 @@ def calculate_statistics(*data: int, **options: bool) -> dict:
                 statistics["mode"] = "No mode found"  # No mode in the data
         if options.get("range", False):
             statistics["range"] = max(data) - min(data)
-    
+
     # If no options are provided, calculate all statistics
     else:
         statistics["mean"] = mean(data)
@@ -38,8 +39,9 @@ def calculate_statistics(*data: int, **options: bool) -> dict:
         except StatisticsError:
             statistics["mode"] = "No mode found"  # No mode in the data
         statistics["range"] = max(data) - min(data)
-    
+
     return statistics
+
 
 # Example usage of the function
 data_points = [4, 1, 2, 2, 3, 5]

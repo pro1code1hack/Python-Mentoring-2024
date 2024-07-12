@@ -12,25 +12,25 @@ def list_manipulator() -> None:
     while True:
         print_menu()
         choice = input("Choose an option: ")
-        
+
         if choice == "1":
             # Add an item
             item_to_add = input("Enter the item to add: ")
-            
+
             items.append(item_to_add)
             print(f"Output: list: {items}")
-        
+
         elif choice == "2":
             # Remove an item
             item_to_remove = input("Enter the item to remove: ")
-            
+
             if item_to_remove in items:
                 items.remove(item_to_remove)
             else:
                 print("Item not found in the list.")
-            
+
             print(f"Output: list: {items}")
-        
+
         elif choice == "3":
             # Modify an item
             item_to_modify = input("Enter the item to modify: ")
@@ -41,9 +41,9 @@ def list_manipulator() -> None:
                 items[index_to_modify] = new_item
             else:
                 print("Item not found in the list.")
-            
+
             print(f"Output: list: {items}")
-        
+
         elif choice == "0":
             # Exit the program
             print("Exiting the program.\n")

@@ -1,5 +1,6 @@
 import random
 
+
 # Task 1: Basic set Operations and Methods
 def task1() -> None:
     A = set(range(1, 11))  # Set A containing numbers from 1 to 10
@@ -51,24 +52,26 @@ def task2() -> None:
     }
     print(task_2_results)
 
+
 # Task 3: Primes
 def is_prime(n: int) -> bool:
     if n <= 1:
         return False
-    for i in range(2, int(n**0.5) + 1):
+    for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
             return False
     return True
 
+
 # Task 4: Create a game where players guess letters of a secret word, using sets to track guessed letters
-def guess_letter(secret_word: str, guessed_letters: set[str], guess: str) -> list[str]:
+def guess_letter(secret_word: str, guessed_letters: set[str], guess: str) -> tuple[str, set[str]]:
     guessed_letters = set(guessed_letters)
     guessed_letters.add(guess)
     if guess in secret_word:
         return 'Correct', guessed_letters
     else:
         return 'Incorrect', guessed_letters
-    
+
 
 primes = {n for n in range(1, 101) if is_prime(n)}
 task_3_primes = primes

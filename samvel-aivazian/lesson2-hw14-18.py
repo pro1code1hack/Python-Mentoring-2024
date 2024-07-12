@@ -8,16 +8,19 @@ def name_corrector(name: str) -> str:
     corrected_name = name.capitalize()
     return corrected_name
 
+
 # Assignment 2: The Substring Counter
 def substring_counter(main_string: str, substring: str) -> str:
     count = main_string.count(substring)
     return f"The substring '{substring}' appears {count} times in '{main_string}'."
+
 
 # Assignment 3: The Alignment Formatter
 def alignment_formatter(sentence: str, width: int) -> str:
     # The center method is used to center align the string within the specified width
     centered_sentence = sentence.center(width)
     return centered_sentence
+
 
 # Assignment 4: The Case Converter
 def case_converter(text: str, case_type: str) -> str:
@@ -28,11 +31,13 @@ def case_converter(text: str, case_type: str) -> str:
     else:
         return "Error: Invalid choice. Please choose 'upper' or 'lower'."
 
+
 # Assignment 5: The URL Corrector
 def url_corrector(url: str) -> str:
     if not url.startswith('http://') and not url.startswith('https://'):
         url = f"https://{url}"
     return f"Corrected URL: {url}"
+
 
 # Demonstration of results without actual user input (as we can't get user input in this environment):
 

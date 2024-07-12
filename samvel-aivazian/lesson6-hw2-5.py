@@ -1,11 +1,13 @@
 import sys
 
+
 # Assignment 2: The Substring Counter
 def count_substrings(main_string, substring):
     try:
         return main_string.count(substring)
     except Exception as e:
         print(f"An error occurred: {e}", file=sys.stderr)
+
 
 main_string_test = "hellohellohello"
 substring_test = "ello"
@@ -16,6 +18,7 @@ try:
 except Exception as e:
     print(f"An error occurred: {e}", file=sys.stderr)
 
+
 # Assignment 3: The Alignment Formatter
 def format_sentence(sentence, frame_width):
     try:
@@ -25,6 +28,7 @@ def format_sentence(sentence, frame_width):
     except Exception as e:
         print(f"An error occurred: {e}", file=sys.stderr)
 
+
 sentence_test = "hello"
 frame_width_test = 10
 
@@ -33,6 +37,7 @@ try:
     print(formatted_sentence)
 except Exception as e:
     print(f"An error occurred: {e}", file=sys.stderr)
+
 
 # Assignment 4: The Case Converter
 def convert_case(text, case):
@@ -46,6 +51,7 @@ def convert_case(text, case):
     except Exception as e:
         print(f"An error occurred: {e}", file=sys.stderr)
 
+
 text_test = "Python is Fun!"
 case_test = "upper"
 
@@ -54,6 +60,7 @@ try:
     print(converted_text)
 except Exception as e:
     print(f"An error occurred: {e}", file=sys.stderr)
+
 
 # Assignment 5: The URL Corrector
 def correct_url(url):
@@ -64,6 +71,7 @@ def correct_url(url):
     except Exception as e:
         print(f"An error occurred: {e}", file=sys.stderr)
 
+
 url_test = "www.swetrix.com"
 
 try:
@@ -72,6 +80,7 @@ try:
 except Exception as e:
     print(f"An error occurred: {e}", file=sys.stderr)
 
+
 # Writing to file logic
 def write_to_file(file_path, content):
     try:
@@ -79,6 +88,7 @@ def write_to_file(file_path, content):
             file.write(content + "\n")
     except Exception as e:
         print(f"Failed to write to file: {e}", file=sys.stderr)
+
 
 # Writing the results to a file
 results_file_path = 'results.txt'

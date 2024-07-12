@@ -5,13 +5,15 @@ def fibonacci_sequence(n: int) -> list[int]:
     while len(sequence) < n:
         next_value = sequence[-1] + sequence[-2]
         sequence.append(next_value)
-        
+
     return sequence[:n]
+
 
 # For Assignment 3, let's implement The Multiplication Table Printer.
 def multiplication_table(number: int) -> None:
     for i in range(1, 11):
         print(f"{number} x {i} = {number * i}")
+
 
 # Fibonacci Sequence Generator example with n=5
 fib_sequence = fibonacci_sequence(5)

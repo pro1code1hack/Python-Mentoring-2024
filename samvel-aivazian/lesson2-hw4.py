@@ -9,5 +9,6 @@ def is_prime(number: int) -> None:
     else:
         print(f"{number} is not a prime number.")
 
+
 test_number = 11
 is_prime(test_number)

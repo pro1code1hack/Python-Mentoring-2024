@@ -12,4 +12,5 @@ def custom_string_slicer() -> None:
 
     print(f"The sliced string{' with step' if add_step else ''} is: {sliced_string}")
 
+
 custom_string_slicer()
