@@ -1,8 +1,17 @@
+from typing import Tuple, Optional
+
+
 # Assignment 1: Cube Measurements
-from typing import Tuple, Any
+def cube_measurements(edge_length: int) -> Tuple[int | Optional[int, float], int | Optional[int, float]]:
+    """
+    Calculate the volume and surface area of a cube given the edge length.
 
+    Args:
+    edge_length (int): The length of the edge of the cube.
 
-def cube_measurements(edge_length: int) -> tuple[int | Any, int | Any]:
+    Returns:
+    Tuple[int, int]: A tuple containing the volume and surface area of the cube.
+    """
     volume = edge_length ** 3
     surface_area = 6 * (edge_length ** 2)
     return volume, surface_area
@@ -10,12 +19,34 @@ def cube_measurements(edge_length: int) -> tuple[int | Any, int | Any]:
 
 # Assignment 2: Computer Set Cost Calculator
 def total_cost_of_computer_sets(monitor_cost: int, system_unit_cost: int, keyboard_cost: int, mouse_cost: int) -> int:
+    """
+    Calculate the total cost of 3 computer sets given the costs of individual components.
+
+    Args:
+    monitor_cost (int): The cost of one monitor.
+    system_unit_cost (int): The cost of one system unit.
+    keyboard_cost (int): The cost of one keyboard.
+    mouse_cost (int): The cost of one mouse.
+
+    Returns:
+    int: The total cost of 3 computer sets.
+    """
     total_cost = 3 * (monitor_cost + system_unit_cost + keyboard_cost + mouse_cost)
     return total_cost
 
 
 # Assignment 3: Basic Arithmetic Operations
-def arithmetic_operations(num1: int, num2: int) -> tuple[int, int, int]:
+def arithmetic_operations(num1: int, num2: int) -> Tuple[int, int, int]:
+    """
+    Perform basic arithmetic operations (sum, difference, product) on two numbers.
+
+    Args:
+    num1 (int): The first number.
+    num2 (int): The second number.
+
+    Returns:
+    Tuple[int, int, int]: A tuple containing the sum, difference, and product of the two numbers.
+    """
     sum_result = num1 + num2
     difference = num1 - num2
     product = num1 * num2

@@ -1,4 +1,6 @@
 # Movie database
+from typing import Union, List
+
 movie_database = {
     "Interstellar": ["Adventure", "Drama", "Sci-Fi"],
     "Inception": ["Action", "Adventure", "Sci-Fi"],
@@ -19,7 +21,7 @@ def get_user_preferences() -> list:
     return preferred_genres
 
 
-def recommend_movie(preferred_genres: list) -> str:
+def recommend_movie(preferred_genres: list) -> Union[str, List[str]]:
     recommendations = []
     for movie, genres in movie_database.items():
         if any(genre in genres for genre in preferred_genres):
@@ -27,8 +29,8 @@ def recommend_movie(preferred_genres: list) -> str:
 
     if recommendations:
         return recommendations
-    else:
-        return "No movies found matching your preferences."
+
+    return "No movies found matching your preferences."
 
 
 def main() -> None:

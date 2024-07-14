@@ -1,9 +1,13 @@
-# Task 3: Shopping List Organizer
-# A program that helps users organize their shopping list with add, view, remove, and sort functionalities.
 def shopping_list_organizer() -> None:
+    """
+    A program that helps users organize their shopping list with add, view, remove, and exit functionalities.
+    """
     shopping_list = []  # Initial empty shopping list
 
     def print_menu() -> None:
+        """
+        Print the menu options for the shopping list organizer.
+        """
         print("\nMenu:")
         print("1. Add item")
         print("2. View list")
@@ -12,29 +16,24 @@ def shopping_list_organizer() -> None:
 
     while True:
         print_menu()
-        choice = input("Choose an action (add/view/remove/exit): ").lower()
+        choice = input("Choose an action (add/view/remove/exit): ").strip().lower()
 
         if choice == "add":
-            # Add an item
-            item_to_add = input("Enter an item to add: ")
+            item_to_add = input("Enter an item to add: ").strip()
 
-            # Check if the item is a string
-            if isinstance(item_to_add, str):
+            if item_to_add:  # Ensure the item is not empty
                 shopping_list.append(item_to_add)
                 shopping_list.sort()  # Sort the list alphabetically
                 print(f"Item added. Your current list is: {shopping_list}")
             else:
-                print("Sorry, it is not a string")
+                print("Item cannot be empty.")
 
         elif choice == "view":
-            # View the list
             print(f"Shopping List: {shopping_list}")
 
         elif choice == "remove":
-            # Remove an item
-            item_to_remove = input("Enter an item to remove: ")
+            item_to_remove = input("Enter an item to remove: ").strip()
 
-            # Check if the item exists in the list
             if item_to_remove in shopping_list:
                 shopping_list.remove(item_to_remove)
                 print(f"Item removed. Your current list is: {shopping_list}")
@@ -42,7 +41,6 @@ def shopping_list_organizer() -> None:
                 print("Item not found in the list.")
 
         elif choice == "exit":
-            # Exit the program
             print("Exiting the program.")
             break
 
@@ -50,4 +48,5 @@ def shopping_list_organizer() -> None:
             print("Invalid choice. Please try again.")
 
 
-shopping_list_organizer()
+if __name__ == "__main__":
+    shopping_list_organizer()

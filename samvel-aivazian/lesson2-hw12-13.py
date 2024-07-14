@@ -1,5 +1,16 @@
-# For Assignment 2, let's implement the Fibonacci Sequence Generator.
 def fibonacci_sequence(n: int) -> list[int]:
+    """
+    Generate a Fibonacci sequence of length n.
+
+    Args:
+    n (int): The length of the Fibonacci sequence to generate.
+
+    Returns:
+    list[int]: A list containing the Fibonacci sequence of length n.
+    """
+    if n <= 0:
+        return []
+
     sequence = [0, 1]
 
     while len(sequence) < n:
@@ -9,16 +20,21 @@ def fibonacci_sequence(n: int) -> list[int]:
     return sequence[:n]
 
 
-# For Assignment 3, let's implement The Multiplication Table Printer.
 def multiplication_table(number: int) -> None:
+    """
+    Print the multiplication table for a given number from 1 to 10.
+
+    Args:
+    number (int): The number for which to print the multiplication table.
+    """
     for i in range(1, 11):
         print(f"{number} x {i} = {number * i}")
 
 
-# Fibonacci Sequence Generator example with n=5
+# Example usage of Fibonacci Sequence Generator
 fib_sequence = fibonacci_sequence(5)
 print(f"Fibonacci sequence with 5 numbers: {fib_sequence}")
 
-# Multiplication Table Printer example with number=3
+# Example usage of Multiplication Table Printer
 print("\nMultiplication table for 3:")
 multiplication_table(3)

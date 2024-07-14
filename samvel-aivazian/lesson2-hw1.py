@@ -1,10 +1,11 @@
-# Task 1: The Guessing Game.
-
 import random
 
 
 def guessing_game() -> None:
-    correct_number = random.randint(1, 10)
+    """
+    Play a guessing game where the user tries to guess a number between 1 and 10.
+    """
+    correct_number = random.randint(1, 10)  # Generate a random number between 1 and 10
 
     while True:
         user_input = input("Guess the number or type 'exit' to stop: ")
@@ -27,4 +28,5 @@ def guessing_game() -> None:
             print("Wrong! Try again.")
 
 
-guessing_game()
+if __name__ == "__main__":
+    guessing_game()

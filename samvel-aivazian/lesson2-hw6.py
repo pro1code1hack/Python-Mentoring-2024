@@ -1,4 +1,8 @@
 def input_validator() -> None:
+    """
+    Continuously prompt the user to enter their age until a valid integer is provided.
+    Prints the age once a valid input is received.
+    """
     while True:
         user_input = input("Enter your age: ")
 
@@ -10,4 +14,5 @@ def input_validator() -> None:
             print("Invalid input, please enter a number.")
 
 
-input_validator()
+if __name__ == "__main__":
+    input_validator()

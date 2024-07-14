@@ -1,44 +1,64 @@
 from statistics import mean, median, multimode, StatisticsError
+from typing import List, Union, Dict, Any
 
 
-# Task 5: Advanced Statistics Calculator
-def calculate_statistics(*data: int, **options: bool) -> str | dict[str, int | str]:
+def calculate_mean(data: List[int]) -> float:
+    """Calculate the mean of the data."""
+    return mean(data)
+
+
+def calculate_median(data: List[int]) -> float:
+    """Calculate the median of the data."""
+    return median(data)
+
+
+def calculate_mode(data: List[int]) -> Union[int, List[int], str]:
+    """Calculate the mode of the data."""
+    try:
+        mode_values = multimode(data)
+        if len(mode_values) == 1:
+            return mode_values[0]
+        return mode_values
+    except StatisticsError:
+        return "No mode found"
+
+
+def calculate_range(data: List[int]) -> int:
+    """Calculate the range of the data."""
+    return max(data) - min(data)
+
+
+def calculate_statistics(*data: int, **options: bool) -> Union[str, Dict[str, Any]]:
+    """
+    Calculate statistics for the given data.
+
+    Args:
+    data (int): The data points.
+    options (bool): Optional arguments to specify which statistics to calculate.
+
+    Returns:
+    Union[str, Dict[str, Any]]: A dictionary of calculated statistics or a message if the dataset is empty.
+    """
     if not data:
         return "Dataset is empty"
 
     statistics = {}
+    data_list = list(data)
 
-    # If options are provided, calculate based on options
     if options:
         if options.get("mean", False):
-            statistics["mean"] = mean(data)
+            statistics["mean"] = calculate_mean(data_list)
         if options.get("median", False):
-            statistics["median"] = median(data)
+            statistics["median"] = calculate_median(data_list)
         if options.get("mode", False):
-            try:
-                mode_values = multimode(data)
-                if len(mode_values) == 1:  # Only one mode
-                    statistics["mode"] = mode_values[0]
-                else:
-                    statistics["mode"] = mode_values  # Multiple modes
-            except StatisticsError:
-                statistics["mode"] = "No mode found"  # No mode in the data
+            statistics["mode"] = calculate_mode(data_list)
         if options.get("range", False):
-            statistics["range"] = max(data) - min(data)
-
-    # If no options are provided, calculate all statistics
+            statistics["range"] = calculate_range(data_list)
     else:
-        statistics["mean"] = mean(data)
-        statistics["median"] = median(data)
-        try:
-            mode_values = multimode(data)
-            if len(mode_values) == 1:  # Only one mode
-                statistics["mode"] = mode_values[0]
-            else:
-                statistics["mode"] = mode_values  # Multiple modes
-        except StatisticsError:
-            statistics["mode"] = "No mode found"  # No mode in the data
-        statistics["range"] = max(data) - min(data)
+        statistics["mean"] = calculate_mean(data_list)
+        statistics["median"] = calculate_median(data_list)
+        statistics["mode"] = calculate_mode(data_list)
+        statistics["range"] = calculate_range(data_list)
 
     return statistics
 

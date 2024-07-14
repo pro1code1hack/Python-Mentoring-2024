@@ -1,11 +1,30 @@
 class Pet:
+    """
+    A class to represent a virtual pet.
+
+    Attributes:
+    name (str): The name of the pet.
+    hunger (int): The hunger level of the pet (0-100).
+    happiness (int): The happiness level of the pet (0-100).
+    health (int): The health level of the pet (0-100).
+    """
+
     def __init__(self, name: str) -> None:
+        """
+        Initialize the pet with a name and default values for hunger, happiness, and health.
+
+        Args:
+        name (str): The name of the pet.
+        """
         self.name: str = name
         self.hunger: int = 50
         self.happiness: int = 50
         self.health: int = 100
 
     def feed(self) -> None:
+        """
+        Feed the pet to decrease hunger and increase health.
+        """
         self.hunger -= 10
         if self.hunger < 0:
             self.hunger = 0
@@ -15,6 +34,9 @@ class Pet:
         print(f"{self.name} has been fed.")
 
     def play(self) -> None:
+        """
+        Play with the pet to increase happiness, hunger, and health.
+        """
         self.happiness += 10
         if self.happiness > 100:
             self.happiness = 100
@@ -25,6 +47,9 @@ class Pet:
         print(f"{self.name} has played.")
 
     def check_status(self) -> None:
+        """
+        Print the current status of the pet.
+        """
         print(f"{self.name}'s status:")
         print(f"Hunger: {self.hunger}")
         print(f"Happiness: {self.happiness}")
@@ -32,6 +57,9 @@ class Pet:
 
 
 def main() -> None:
+    """
+    Main function to interact with the virtual pet.
+    """
     pet_name: str = input("What is the name of your pet? ")
     pet: Pet = Pet(pet_name)
 

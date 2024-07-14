@@ -1,5 +1,13 @@
-# Task 3: Find All Factors
 def get_factors(num: int) -> list[int]:
+    """
+    Find all factors of a given number.
+
+    Args:
+    num (int): The number to find factors for.
+
+    Returns:
+    list[int]: A sorted list of factors of the given number.
+    """
     if num < 1:
         return []  # Return empty list for numbers less than 1
 
@@ -17,8 +25,17 @@ def get_factors(num: int) -> list[int]:
     return sorted(factors)  # Return the sorted list of factors
 
 
-# Task 4: Temperature Converter with Optional Parameters
 def convert_temperature(temperature: int, convert_to: str = 'F') -> float:
+    """
+    Convert temperature between Celsius and Fahrenheit.
+
+    Args:
+    temperature (int): The temperature to convert.
+    convert_to (str): The target temperature unit ('C' for Celsius, 'F' for Fahrenheit).
+
+    Returns:
+    float: The converted temperature.
+    """
     if convert_to == 'C':  # Fahrenheit to Celsius conversion
         return (temperature - 32) * 5 / 9
     else:  # Celsius to Fahrenheit conversion
@@ -29,12 +46,12 @@ def convert_temperature(temperature: int, convert_to: str = 'F') -> float:
 task_3_output_1 = get_factors(28)
 task_3_output_2 = get_factors(13)
 task_3_output_3 = get_factors(0)
-print(task_3_output_1)
-print(task_3_output_2)
-print(task_3_output_3)
+print("Factors of 28:", task_3_output_1)  # Expected: [1, 2, 4, 7, 14, 28]
+print("Factors of 13:", task_3_output_2)  # Expected: [1, 13]
+print("Factors of 0:", task_3_output_3)  # Expected: []
 
 # Test outputs for Task 4
-task_4_output_1 = convert_temperature(100)
-task_4_output_2 = convert_temperature(212, convert_to='C')
-print(task_4_output_1)
-print(task_4_output_2)
+task_4_output_1 = convert_temperature(100)  # Expected: 212.0
+task_4_output_2 = convert_temperature(212, convert_to='C')  # Expected: 100.0
+print("100°C to Fahrenheit:", task_4_output_1)  # Expected: 212.0
+print("212°F to Celsius:", task_4_output_2)  # Expected: 100.0

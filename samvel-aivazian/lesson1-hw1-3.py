@@ -1,5 +1,9 @@
+from typing import List, Tuple
+
+
 # Assignment 1: Interval Membership
-def find_shortest_longest_cities(cities: list[str]) -> tuple[str, str]:
+def find_shortest_longest_cities(cities: List[str]) -> Tuple[str, str]:
+    """Find the shortest and longest city names in the given list."""
     # Sort the cities based on their length
     sorted_cities = sorted(cities, key=len)
     # The shortest city name will be the first and the longest will be the last
@@ -8,32 +12,28 @@ def find_shortest_longest_cities(cities: list[str]) -> tuple[str, str]:
 
 # Assignment 2: Resting Query
 def contains_weekend_day(text: str) -> str:
-    # Check if "Saturday" or "Sunday" is in the text
-    if "Saturday" in text or "Sunday" in text:
-        return "YES"
-    else:
-        return "NO"
+    """Check if the text contains 'Saturday' or 'Sunday'."""
+    # Check if "Saturday" or "Sunday" is in the text using a ternary operator
+    return "YES" if "Saturday" in text or "Sunday" in text else "NO"
 
 
 # Assignment 3: Validating an Email Address
 def is_valid_email(email: str) -> str:
-    # Check for the presence of '@' and '.'
-    if "@" in email and "." in email:
-        return "YES"
-    else:
-        return "NO"
+    """Validate if the given email address contains '@' and '.'."""
+    # Check for the presence of '@' and '.' using a ternary operator
+    return "YES" if "@" in email and "." in email else "NO"
 
 
 # For assignment 1
 cities = ["Tokyo", "New York", "Delhi"]
 shortest, longest = find_shortest_longest_cities(cities)
-print(shortest)
-print(longest)
+print(f"The shortest city name is: {shortest}")
+print(f"The longest city name is: {longest}")
 
 # For assignment 2
 text = "I will rest on Saturday."
-print(contains_weekend_day(text))
+print(f"Does the text contain a weekend day? {contains_weekend_day(text)}")
 
 # For assignment 3
 email = "example@example.com"
-print(is_valid_email(email))
+print(f"Is the email address valid? {is_valid_email(email)}")
