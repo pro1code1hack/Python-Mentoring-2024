@@ -1,4 +1,4 @@
-# main_repeat_after_me.py
+# main.py
 
 import logging
 
