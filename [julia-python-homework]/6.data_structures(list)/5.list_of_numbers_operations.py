@@ -10,43 +10,43 @@
 # • If the second element is > 10, replace it with 10.
 
 
-numbers = [3, 12, 5, 8, 4, 9, 15, 22]
+nums = [3, 12, 5, 8, 4, 9, 15, 22]
 
-len_of_list = len(numbers)
+len_of_list = len(nums)
 print("Length: ", len_of_list)
 
-summary = sum(numbers)
+summary = sum(nums)
 print("Summary: ", summary)
 
-max_num = max(numbers)
+max_num = max(nums)
 print("Max: ", max_num)
 
-min_num = min(numbers)
+min_num = min(nums)
 print("Min: ", min_num)
 
 avg = round(summary / len_of_list)
 print("Average: ", avg)
 
-copy_num = numbers[:]
-last_num = copy_num.pop()
-print("Last element: ", last_num)
-
-copy_num = numbers[:]
-reversed_list = copy_num[::-1]
-print("Reversed list: ", reversed_list)
-
-if 4 in numbers and 9 in numbers:
+if 4 and 9 in nums:
     print("YES")
 else:
     print("NO")
 
-third_from_end = numbers[-3]
+third_from_end = nums[-3]
 print("Third element from the end ", third_from_end)
 
-if copy_num[1] > 10:
-    copy_num.pop(1)
-    copy_num.insert(1, 10)
-print("List after changind the 2nd element: ", copy_num)
+copy_nums = nums[:]
+last_num = copy_nums.pop()
+print("Last element: ", last_num)
+
+copy_nums = nums[:]
+reversed_list = copy_nums[::-1]
+print("Reversed list: ", reversed_list)
+
+if copy_nums[1] > 10:
+    copy_nums.pop(1)
+    copy_nums.insert(1, 10)
+print("List after changind the 2nd element: ", copy_nums)
 
 ## Why
 ## C0103: Constant name "len_of_list" doesn't conform to UPPER_CASE naming style (invalid-name)
