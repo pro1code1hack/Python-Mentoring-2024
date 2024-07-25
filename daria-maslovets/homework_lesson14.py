@@ -1,27 +1,30 @@
 """
+Task 1: Inventory Manager
 
-### Task 1: The Guessing Game
-**Objective:**: Write a program that selects a random number and asks the user to guess it. Use a while loop to allow multiple attempts until they guess correctly or choose to exit.
-Input:
-Guess the number: 8
-Wrong! Try again or type 'exit' to stop: 5
-Wrong! Try again or type 'exit' to stop: exit
-Output:
-The correct number was 7. Better luck next time!
+Implement a function that handles adding and updating an inventory for a fantasy game character using higher-order functions.
+
+**Requirements**:
+- Write a `manage_inventory()` function that can take commands such as "add" or "update" along with item details and modifies the inventory accordingly.
+- Use closures to encapsulate the inventory state within the manager.
+
 """
 
+def inventory_manager():
+    inventory = {}
+    def manage(command, item, quantity):
+        if command == "add":
+            if item in inventory:
+                inventory[item] += quantity
+            else:
+                inventory[item] = quantity
+        elif command == "update":
+            if item in inventory:
+                inventory[item] = quantity
+            else:
+                print(f"Item '{item}' not found in inventory.")
+        return inventory
+    return manage
 
-
-number = 8
-guess = int(input("Enter a number "))       # Read the guess
-
-while number != guess:
-    want_exit = input("Do you want to exit?")
-    if want_exit == 'Yes':
-        print(f'The correct number was {number}. Better luck next time!')  #run function with the number
-        break
-
-    guess = int(input("Wrong! Try again"))                     # While guess is not the same as your number ....
 
 
 

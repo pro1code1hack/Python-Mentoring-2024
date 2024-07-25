@@ -1,32 +1,26 @@
 """
+Task 1: Exception Safe File Reader
 
-### Task 1: The Guessing Game
-**Objective:**: Write a program that selects a random number and asks the user to guess it. Use a while loop to allow multiple attempts until they guess correctly or choose to exit.
-Input:
-Guess the number: 8
-Wrong! Try again or type 'exit' to stop: 5
-Wrong! Try again or type 'exit' to stop: exit
-Output:
-The correct number was 7. Better luck next time!
+Create a function `safe_file_reader` that reads contents from a given file and handles any possible exceptions.
+
+#### Requirements:
+
+- The function should accept a file path as an argument.
+- Use a `try-except` block to handle `FileNotFoundError` and print a friendly message if the file is not found.
+- Use the `with` statement to ensure the file is properly closed after reading.
+- Print the contents of the file if it is found and successfully opened.
 """
 
+def safe_file_reader(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            contents = file.read()
+            print(contents)
+    except FileNotFoundError:
+        print("Sorry, the file was not found.")
 
 
-number = 8
-guess = int(input("Enter a number "))       # Read the guess
-
-while number != guess:
-    want_exit = input("Do you want to exit?")
-    if want_exit == 'Yes':
-        print(f'The correct number was {number}. Better luck next time!')  #run function with the number
-        break
-
-    guess = int(input("Wrong! Try again"))                     # While guess is not the same as your number ....
-
-
-
-
-
+safe_file_reader("homework_lesson1231.py")
 
 
 
